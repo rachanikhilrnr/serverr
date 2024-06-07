@@ -6,12 +6,18 @@ const postModel = require('./models/post')
 
 const PORT = 5000;
 
+const corsOptions = {
+    origin:'https://te-frontend-ecru.vercel.app/',
+    methods:'GET,PUT,POST',
+    credentials:true
+}
+
 const connect = mongoose.connect("mongodb+srv://21955a1206:nikhil1528@ecommerce.zoovig6.mongodb.net/EC?retryWrites=true&w=majority&appName=Ecommerce")
 .then(() => console.log("Database connected"))
 .catch((err) => console.log(err));
 
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.listen(PORT,() => {
