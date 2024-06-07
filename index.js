@@ -7,7 +7,7 @@ const postModel = require('./models/post')
 const PORT = 5000;
 
 const corsOptions = {
-    origin:'https://te-frontend-ecru.vercel.app/',
+    origin:'*',
     methods:'GET,PUT,POST',
     credentials:true
 }
